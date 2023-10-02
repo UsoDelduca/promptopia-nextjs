@@ -13,7 +13,7 @@ const CreatePrompt = () => {
     tag: '',
   })
 
-  const CreatePrompt = async (e) => {}
+  const createPrompt = async (e) => {}
 
   return (
     <Form
