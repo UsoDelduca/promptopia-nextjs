@@ -7,8 +7,8 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         <span className="blue_gradient">{type} Post</span>
       </h1>
       <p className="desc text-left max-w-md">
-        {type} and share amzing prompts with the world, and let your imagination
-        run wild with any Ai-powered platform
+        {type} and share amazing prompts with the world, and let your
+        imagination run wild with any Ai-powered platform
       </p>
       <form
         onSubmit={handleSubmit}
