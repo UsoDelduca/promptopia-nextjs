@@ -14,7 +14,6 @@ const PromptCardList = ({ data, handleTagClick }) => {
           handleTagClick={handleTagClick}
         />
       ))}
-      {console.log('here is some data', data)}
     </div>
   )
 }
