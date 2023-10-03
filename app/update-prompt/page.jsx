@@ -17,9 +17,8 @@ const EditPrompt = () => {
 
   useEffect(() => {
     const getPromptDetails = async () => {
-      const response = await fetch(`/api/prompts/${promptId}`)
+      const response = await fetch(`/api/prompt/${promptId}`)
       const data = await response.json()
-
       setPost({
         prompt: data.prompt,
         tag: data.tag,
@@ -29,30 +28,30 @@ const EditPrompt = () => {
     if (promptId) getPromptDetails()
   }, [promptId])
 
-  const createPrompt = async (e) => {
-    e.preventDefault()
+  // const createPrompt = async (e) => {
+  //   e.preventDefault()
 
-    setSubmitting(true)
+  //   setSubmitting(true)
 
-    try {
-      const response = await fetch('/api/prompt/new', {
-        method: 'POST',
-        body: JSON.stringify({
-          prompt: post.prompt,
-          userId: session?.user.id,
-          tag: post.tag,
-        }),
-      })
+  //   try {
+  //     const response = await fetch('/api/prompt/new', {
+  //       method: 'POST',
+  //       body: JSON.stringify({
+  //         prompt: post.prompt,
+  //         userId: session?.user.id,
+  //         tag: post.tag,
+  //       }),
+  //     })
 
-      if (response.ok) {
-        router.push('/')
-      }
-    } catch (error) {
-      console.log(error)
-    } finally {
-      setSubmitting(false)
-    }
-  }
+  //     if (response.ok) {
+  //       router.push('/')
+  //     }
+  //   } catch (error) {
+  //     console.log(error)
+  //   } finally {
+  //     setSubmitting(false)
+  //   }
+  // }
 
   return (
     <Form
@@ -60,7 +59,7 @@ const EditPrompt = () => {
       post={post}
       setPost={setPost}
       submitting={submitting}
-      handleSubmit={createPrompt}
+      handleSubmit={() => {}}
     />
   )
 }
